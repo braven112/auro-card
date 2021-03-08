@@ -38,7 +38,7 @@ The background image slot is configured to work with the HTML [picture](https://
 </picture>
 ```
 
-This allows the editor the upmost in image flexibility for cropped images placed at different breakpoints. A slotted `img` element is the default image shown when less than the first defined breakpoint.
+<br>This allows the editor the upmost in image flexibility for cropped images placed at different breakpoints. A slotted `img` element is the default image shown when less than the first defined breakpoint.<br><br>
 
 <div class="exampleWrapper">
   <auro-banner billboard>
@@ -96,21 +96,132 @@ This allows the editor the upmost in image flexibility for cropped images placed
 ```
 </auro-accordion>
 
-## Hero
+## Billboard / slim / alignRight / onDark
 
-The following example illustrates a `auro-banner` custom element with the `hero` template style. This template configuration also supports the `slim` and `onDark` attributes. This example also illustrates the use of the `prefix` slot.
+The following example illustrates a series of additional API options available to the `auro-banner` element. In this example, this shows how a user can augment the `billboard` theme of the `auro-banner`.
 
-Notice for the `displayImage` slot, this example is using a single `img` element.
+For the call-to-action button, see in the example code that it is required to set the `onDark` attribute on the `auro-hyperlink` element itself. This is **not** controlled by the `auro-banner` element.
+
+<div class="exampleWrapper">
+  <auro-banner billboard slim alignRight ondark>
+    <picture slot="displayImage">
+      <source srcset="https://picsum.photos/id/324/1600/800.jpg" media="(min-width: 1024px)">
+      <source srcset="https://picsum.photos/id/324/900/800" media="(min-width:660px)" >
+      <source srcset="https://picsum.photos/id/324/660/1600">
+      <img src="https://picsum.photos/id/324/225/550" alt="">
+    </picture>
+    <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
+    <p slot="description">
+      <span style="max-width:320px; margin-left:auto; display:block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+    </p>
+    <auro-hyperlink
+      cta
+      ondark
+      href="/"
+      slot="action"
+      target="_blank">
+      Learn more
+    </auro-hyperlink>
+  </auro-banner>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
 
 ```html
-<img src="https://picsum.photos/id/10/550/550" alt="" slot="displayImage" />
+<auro-banner billboard slim alignRight ondark>
+    <picture slot="displayImage">
+      <source srcset="https://picsum.photos/id/324/1600/800.jpg" media="(min-width: 1024px)">
+      <source srcset="https://picsum.photos/id/324/900/800" media="(min-width:660px)" >
+      <source srcset="https://picsum.photos/id/324/660/1600">
+      <img src="https://picsum.photos/id/324/225/550" alt="">
+    </picture>
+    <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
+    <p slot="description">
+      <span style="max-width:320px; margin-left:auto; display:block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+    </p>
+    <auro-hyperlink
+      cta
+      ondark
+      href="/"
+      slot="action"
+      target="_blank">
+      Learn more
+    </auro-hyperlink>
+  </auro-banner>
 ```
+</auro-accordion>
 
-The `picture` element could be used if necessary.
+
+
+## Billboard / slim / alignLeft / onDark
+
+The following example illustrates an option to left align the text `alignLeft` along with `slim` to reduce the padding and `ondark` to change the text to white.
+
+<div class="exampleWrapper">
+  <auro-banner billboard slim alignLeft onDark>
+    <picture slot="displayImage">
+      <source srcset="https://picsum.photos/id/42/2048/1200" media="(min-width: 1024px)">
+      <source media="(min-width:660px)" srcset="https://picsum.photos/id/42/900/800">
+      <source srcset="https://picsum.photos/id/42/660/3000">
+      <img src="https://picsum.photos/id/42/225/550" alt="">
+    </picture>
+    <span slot="title">Beverages and cocktails</span>
+    <p slot="description">
+      <span style="max-width: 360px;display: block;">Enjoy soft drinks, fresh Starbucks® coffee – including lattes and cappuccinos, and Teavana® tea while you relax. Or try our famous Bloody Mary.</span>
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      ondark
+      href="/"
+      slot="action"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </auro-banner>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+<auro-banner billboard slim alignLeft onDark>
+    <picture slot="displayImage">
+      <source srcset="https://picsum.photos/id/42/2048/1200" media="(min-width: 1024px)">
+      <source media="(min-width:660px)" srcset="https://picsum.photos/id/42/900/800">
+      <source srcset="https://picsum.photos/id/42/660/3000">
+      <img src="https://picsum.photos/id/42/225/550" alt="">
+    </picture>
+    <span slot="title">Beverages and cocktails</span>
+    <p slot="description">
+      <span style="max-width: 360px;display: block;">Enjoy soft drinks, fresh Starbucks® coffee – including lattes and cappuccinos, and Teavana® tea while you relax. Or try our famous Bloody Mary.</span>
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      ondark
+      href="/"
+      slot="action"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </auro-banner>
+```
+</auro-accordion>
+
+## Hero
+
+The following example illustrates a `auro-banner` custom element with the `hero` template style. This example also illustrates the use of the `prefix` slot.
 
 <div class="exampleWrapper">
   <auro-banner hero>
-    <img src="https://picsum.photos/id/10/550/650" alt="" slot="displayImage" />
+    <picture slot="displayImage">
+      <source srcset="https://picsum.photos/id/369/2048/2000" media="(min-width: 1024px)">
+      <source srcset="https://picsum.photos/id/369/736/1400" media="(min-width:660px)">
+      <source srcset="https://picsum.photos/id/369/660/420">
+      <img src="https://picsum.photos/id/369/225/550" alt="">
+    </picture>
     <span slot="prefix">Duis aute irure dolor</span>
     <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
     <p slot="description">
@@ -132,21 +243,26 @@ The `picture` element could be used if necessary.
 
 ```html
 <auro-banner hero>
-  <img src="https://picsum.photos/id/10/550/650" alt="" slot="displayImage" />
-  <span slot="prefix">Duis aute irure dolor</span>
-  <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
-  <p slot="description">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-  <auro-hyperlink
-    cta
-    secondary
-    href="/"
-    slot="action"
-    target="_blank">
-    More info
-  </auro-hyperlink>
-</auro-banner>
+    <picture slot="displayImage">
+      <source srcset="https://picsum.photos/id/369/2048/2000" media="(min-width: 1024px)">
+      <source srcset="https://picsum.photos/id/369/736/1400" media="(min-width:660px)">
+      <source srcset="https://picsum.photos/id/369/660/420">
+      <img src="https://picsum.photos/id/369/225/550" alt="">
+    </picture>
+    <span slot="prefix">Duis aute irure dolor</span>
+    <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
+    <p slot="description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      href="/"
+      slot="action"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </auro-banner>
 ```
 </auro-accordion>
 
@@ -154,11 +270,14 @@ The `picture` element could be used if necessary.
 
 The following example illustrates a `auro-banner` custom element with the `marquee` template style. This template configuration also supports the `slim` and `onDark` attributes.
 
-Notice for the `displayImage` slot, this example is using a single `img` element.
-
 <div class="exampleWrapper">
   <auro-banner marquee>
-    <img src="https://picsum.photos/id/82/550/560" alt="" slot="displayImage" />
+    <picture slot="displayImage">
+      <source srcset="https://picsum.photos/id/154/2048/2000" media="(min-width: 1024px)">
+      <source srcset="https://picsum.photos/id/154/736/1400" media="(min-width:660px)">
+      <source srcset="https://picsum.photos/id/154/660/420">
+      <img src="https://picsum.photos/id/154/225/550" alt="">
+    </picture>
     <span slot="prefix">Duis aute irure dolor</span>
     <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
     <p slot="description">
@@ -180,91 +299,49 @@ Notice for the `displayImage` slot, this example is using a single `img` element
 
 ```html
 <auro-banner marquee>
-  <img src="https://picsum.photos/id/82/450/560" alt="" slot="displayImage" />
-  <span slot="prefix">Duis aute irure dolor</span>
-  <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
-  <p slot="description">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-  <auro-hyperlink
-    cta
-    secondary
-    href="/"
-    slot="action"
-    target="_blank">
-    More info
-  </auro-hyperlink>
-</auro-banner>
-```
-</auro-accordion>
-
-## Marquee solid
-
-The following example illustrates a `auro-banner` custom element with the `marquee solid` template style. With this configuration, `onDark` is implied.
-
-<div class="exampleWrapper">
-  <auro-banner marquee solid slim>
-    <img src="https://picsum.photos/id/1015/550/650" alt="" slot="displayImage" />
-    <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
+    <picture slot="displayImage">
+      <source srcset="https://picsum.photos/id/154/2048/2000" media="(min-width: 1024px)">
+      <source srcset="https://picsum.photos/id/154/736/1400" media="(min-width:660px)">
+      <source srcset="https://picsum.photos/id/154/660/420">
+      <img src="https://picsum.photos/id/154/225/550" alt="">
+    </picture>
+    <span slot="prefix">Duis aute irure dolor</span>
+    <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
     <p slot="description">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
     <auro-hyperlink
       cta
       secondary
-      ondark
       href="/"
       slot="action"
       target="_blank">
       More info
     </auro-hyperlink>
   </auro-banner>
-</div>
-
-<auro-accordion lowProfile justifyRight>
-<span slot="trigger">See code</span>
-
-```html
-<auro-banner marquee solid slim>
-  <img src="https://picsum.photos/id/1015/550/600" alt="" slot="displayImage" />
-  <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
-  <p slot="description">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-  <auro-hyperlink
-    cta
-    secondary
-    ondark
-    href="/"
-    slot="action"
-    target="_blank">
-    More info
-  </auro-hyperlink>
-</auro-banner>
 ```
 </auro-accordion>
 
-## Slim / alignRight / onDark
+## Marquee / solid
 
-The following example illustrates a series of additional API options available to the `auro-banner` element. In this example, this shows how a user can augment the `billboard` theme of the `auro-banner`. Also notice the use of the `title` slot versus the `image` slot in the previous example.
+The following example illustrates a `auro-banner` custom element with the `marquee solid` template style. With this configuration, `onDark` is implied.
 
-For the call-to-action button, see in the example code that it is required to set the `onDark` attribute on the `auro-hyperlink` element itself. This is **not** controlled by the `auro-banner` element.
+Notice for the `displayImage` slot, this example is using a single `img` element.
 
+```html
+<img src="https://picsum.photos/id/10/550/550" alt="" slot="displayImage" />
+```
+
+The `picture` element could be used if necessary.
 <div class="exampleWrapper">
-  <auro-banner billboard slim alignRight onDark>
-    <picture slot="displayImage">
-      <source srcset="https://picsum.photos/id/120/1024/600" media="(min-width: 736px)">
-      <source srcset="https://picsum.photos/id/120/736/1400" media="(min-width: 375px)">
-      <source srcset="https://picsum.photos/id/120/320/1200" media="(min-width: 320px)">
-      <img src="https://picsum.photos/id/120/225/550" alt="" />
-    </picture>
-    <span slot="title">Car Rental</span>
+  <auro-banner marquee solid>
+    <img src="https://picsum.photos/id/1015/550/675" alt="" slot="displayImage" />
+    <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
     <p slot="description">
-      We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
     <auro-hyperlink
       cta
-      secondary
       ondark
       href="/"
       slot="action"
@@ -278,26 +355,23 @@ For the call-to-action button, see in the example code that it is required to se
 <span slot="trigger">See code</span>
 
 ```html
-<auro-banner billboard slim alignRight onDark>
-  <picture slot="displayImage">
-    <source srcset="https://picsum.photos/id/120/1024/600" media="(min-width: 736px)">
-    <source srcset="https://picsum.photos/id/120/736/1400" media="(min-width: 375px)">
-    <source srcset="https://picsum.photos/id/120/320/1200" media="(min-width: 320px)">
-    <img src="https://picsum.photos/id/120/225/550" alt="" />
-  </picture>
-  <span slot="title">Car Rental</span>
-  <p slot="description">
-    We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
-  </p>
-  <auro-hyperlink
-    cta
-    secondary
-    ondark
-    href="/"
-    slot="action"
-    target="_blank">
-    More info
-  </auro-hyperlink>
-</auro-banner>
+<auro-banner marquee solid>
+    <img src="https://picsum.photos/id/1015/550/675" alt="" slot="displayImage" />
+    <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
+    <p slot="description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <auro-hyperlink
+      cta
+      ondark
+      href="/"
+      slot="action"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </auro-banner>
 ```
 </auro-accordion>
+
+
+
