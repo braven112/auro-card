@@ -37,6 +37,7 @@
   .disclaimer {
     color: var(--auro-color-text-secondary-on-light);
     font-size: var(--auro-text-body-size-xs);
+    line-height: var(--auro-text-body-size-xs);
   }
   .bannerWrapper {
     position: relative;
@@ -48,6 +49,7 @@
   }
   .imageWrapper {
     margin-bottom: var(--auro-size-md);
+    display: block;
   }
   .displayImage {
     display: block;
@@ -68,6 +70,7 @@
   }
   .title {
     color: var(--auro-color-brand-midnight-400);
+    margin-bottom: var(--auro-size-md);
   }
   .description {
     display: block;
@@ -106,7 +109,8 @@
     }
   }
   .imageWrapper {
-    margin-bottom: var(--auro-size-xl);
+    display: block;
+    margin-bottom: var(--auro-size-md);
   }
   .contentWrapper {
     @include auro_breakpoint--sm {
@@ -146,7 +150,6 @@
 
 // =-=-=-=-= marquee -=-=-=-=-=-=
 
-
 :host([marquee]) {
   @extend :host([hero]);
 }
@@ -159,6 +162,46 @@
   .bodyWrapper {
     @include auro_breakpoint--sm {
       padding: var(--auro-size-xxl);
+    }
+  }
+}
+
+// =-=-=-=-= roundedBorder -=-=-=-=-=-=
+
+:host([roundedBorder]),
+:host([roundedBorder][alignLeft]) {
+  @extend %auro-banner;
+  .bannerWrapper {
+    border: 1px solid var(--auro-color-border-primary-on-light);
+    border-radius: 5px;
+  }
+  .contentWrapper {
+    margin: 0 auto;
+    flex-basis: 750px;
+  }
+  .action {
+    margin: 0 0 1rem;
+  }
+  .description p {
+    margin: 0;
+  }
+  .bodyWrapper {
+    padding: 1rem;
+    align-items: center;
+    @include auro_breakpoint--sm {
+      flex-direction: row;
+      padding: 1rem 2rem;
+    }
+  }
+  .imageWrapper {
+    @include auro_breakpoint--sm {
+      flex-basis: 435px;
+      display: flex;
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
+    @include auro_breakpoint--md {
+      flex-basis: 400px;
     }
   }
 }
@@ -182,7 +225,6 @@
     width: 100%;
   }
 }
-
 
 // =-=-=-=-= slim -=-=-=-=-=-=
 

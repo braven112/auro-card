@@ -373,5 +373,64 @@ The `picture` element could be used if necessary.
 ```
 </auro-accordion>
 
+## RoundedBorder
+
+The following example illustrates a `auro-banner` custom element with the `marquee solid` template style. With this configuration, `onDark` is implied.
+
+Notice for the `displayImage` slot, this example is using a single `img` element.
+
+```html
+<img src="https://picsum.photos/id/10/550/550" alt="" slot="displayImage" />
+```
+
+The `picture` element could be used if necessary.
+<div class="exampleWrapper">
+  <auro-banner roundedBorder alignLeft>
+  <img src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/common-assets/bank/2020/Visa-2020.png?la=en" alt="" slot="contentImage" />
+    <span slot="prefix">Prefix - Limited Time</span>
+    <span slot="title">Title - Irure dolor.</span>
+    <p slot="description">
+      Description - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+    <div slot="disclaimer">
+      * Disclaimer - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+    <auro-hyperlink
+      cta
+      secondary
+      href="/"
+      slot="action"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </auro-banner>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+<auro-banner roundedBorder alignLeft>
+  <img src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/common-assets/bank/2020/Visa-2020.png?la=en" alt="" slot="contentImage" />
+    <span slot="prefix">Prefix - Limited Time</span>
+    <span slot="title">Title - Irure dolor.</span>
+    <p slot="description">
+      Description - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+    <div slot="disclaimer">
+      * Disclaimer - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+    <auro-hyperlink
+      cta
+      secondary
+      href="/"
+      slot="action"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </auro-banner>
+```
+</auro-accordion>
+
 
 
